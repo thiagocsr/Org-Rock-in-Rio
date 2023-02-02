@@ -1,0 +1,63 @@
+<apex:page showHeader="true" standardController="Opportunity" renderAs="pdf">
+
+<!-- <style> body { font-family: 'Arial Unicode MS'; } </style> -->
+
+<h1>Contrato Oportunidade - Rock In Rio</h1>
+
+<p>Aqui está o contrato com as informações da Oportunidade</p>
+
+<table>
+    <tr>
+        <th>Nome da Oportunidade</th>
+        <td><apex:outputText value="{!Opportunity.Name}"></apex:outputText></td>
+    </tr>
+    <tr>
+        <th>Nome da Empresa</th>
+        <td><apex:outputText value="{!Opportunity.Account.Name}"></apex:outputText></td>
+    </tr>
+    <tr>
+        <th>Valor da Oportunidade</th>
+        <td><apex:outputText value="{!Opportunity.Amount}"></apex:outputText></td>
+    </tr>
+</table>
+
+<hr />
+
+<h2>Atrações Relacionadas</h2>
+
+<table>
+    <apex:repeat value="{!Opportunity.ParceiroAtracoes__r}" var="parceiroAtracao">
+        <tr>
+            <th>Atração</th>
+            <td><apex:outputText value="{!parceiroAtracao.Atracao__r.Conta__r.Name}"/><br/></td>
+        </tr>
+        <tr>
+            <th>Valor Destinado</th>
+            <td>
+                R$
+                <apex:outputText value="{0, number, 000,000.00}">
+                    <apex:param value="{!parceiroAtracao.Valor_Destinado__c}" />
+                </apex:outputText><br/>
+            </td>
+        </tr>
+        <tr>
+            <th>Palco</th>
+            <td><apex:outputText value="{!parceiroAtracao.Atracao__r.Palco__c}"/><br/></td>
+        </tr>
+        
+    </apex:repeat>
+</table>
+
+
+
+        
+
+
+<!--<apex:pageBlock title="Pagina exemplo">
+    <apex:pageBlockSection title="Pagina Oportunidade">
+        Here is something!
+    </apex:pageBlockSection>
+</apex:pageBlock>
+-->
+
+</apex:page>

@@ -1,0 +1,41 @@
+<aura:component implements="force:appHostable" controller="CalendarioAtracoesController">
+
+<!-- attributes -->
+    <aura:attribute name="data" type="List"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+
+<!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <div class="container">
+        <lightning:card footer="Developed by Thiago, Aprendiz Salesforce">
+            <aura:set attribute="title">
+                <lightning:icon iconName="standard:event" size="small" />
+                Calendário de Atrações
+            </aura:set>
+            <aura:set attribute="actions">
+                <lightning:button label="Nova Atração"/>
+            </aura:set>
+            <p class="slds-var-p-horizontal_small">
+
+
+                <!-- the container element determine the height of the datatable -->
+                <div style="height: 300px">
+                    <lightning:datatable
+                        keyField="id"
+                        data="{! v.data }"
+                        columns="{! v.columns }"
+                        hideCheckboxColumn="true"
+                        defaultSortDirection="{!v.defaultSortDirection}"
+                        sortedDirection="{!v.sortDirection}"
+                        sortedBy="{!v.sortedBy}"
+                        onsort="{!c.handleSort}"/>
+                </div>
+
+            </p>
+        </lightning:card>
+    </div>
+</aura:component>

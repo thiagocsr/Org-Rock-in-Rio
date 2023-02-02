@@ -1,0 +1,67 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:hierarchy" size="small"></lightning-icon>
+            <span class="slds-m-left_x-small">Line-Up Rock In Rio</span>
+        </h3>
+        <lightning-button label="Nova Atração" slot="actions"></lightning-button>
+        
+        <div class="slds-m-left_small">
+            <lightning-tabset active-tab-value="2023-09-10">
+                <lightning-tab label="10/09" title="10 de Setembro de 2023" value="2023-09-10" onactive={handleActive}>
+                    <template if:true={infoLineUp}>
+                        <c-atracoes-line-up info-line-up={infoLineUp}>
+                        </c-atracoes-line-up>
+                    </template>                    
+               </lightning-tab>
+                <lightning-tab label="11/09" title="11 de Setembro de 2023" value="2023-09-11" onactive={handleActive}>
+                    <template if:true={infoLineUp}>
+                        <c-atracoes-line-up info-line-up={infoLineUp}>
+                        </c-atracoes-line-up>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="12/09" title="12 de Setembro de 2023" value="2023-09-12" onactive={handleActive}>
+                    <template if:true={infoLineUp}>
+                        <c-atracoes-line-up info-line-up={infoLineUp}>
+                        </c-atracoes-line-up>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="13/09" title="13 de Setembro de 2023" value="2023-09-13" onactive={handleActive}>
+                    <template if:true={infoLineUp}>
+                        <c-atracoes-line-up info-line-up={infoLineUp}>
+                        </c-atracoes-line-up>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="17/09" title="17 de Setembro de 2023" value="2023-09-17" onactive={handleActive}>
+                    <template if:true={infoLineUp}>
+                        <c-atracoes-line-up info-line-up={infoLineUp}>
+                        </c-atracoes-line-up>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="18/09" title="18 de Setembro de 2023" value="2023-09-18" onactive={handleActive}>
+                    <template if:true={infoLineUp}>
+                        <c-atracoes-line-up info-line-up={infoLineUp}>
+                        </c-atracoes-line-up>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="19/09" title="19 de Setembro de 2023" value="2023-09-19" onactive={handleActive}>
+                    <template if:true={infoLineUp}>
+                        <c-atracoes-line-up info-line-up={infoLineUp}>
+                        </c-atracoes-line-up>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="20/09" title="20 de Setembro de 2023" value="2023-09-20" onactive={handleActive}>
+                    <template if:true={infoLineUp}>
+                        <c-atracoes-line-up info-line-up={infoLineUp}>
+                        </c-atracoes-line-up>
+                    </template>
+                </lightning-tab>
+            </lightning-tabset>
+        </div>
+        
+
+        <p slot="footer">Developed by Thiago Cesar</p>
+    </lightning-card>
+</template> 

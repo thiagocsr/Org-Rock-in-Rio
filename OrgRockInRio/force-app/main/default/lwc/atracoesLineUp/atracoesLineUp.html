@@ -1,0 +1,26 @@
+<template>
+
+    <lightning-accordion class="example-accordion"
+                        onsectiontoggle={handleToggleSection}
+                        active-section-name="Palco Mundo">
+
+        <template if:true={infoLineUp}>
+            <template for:each={infoLineUp.palcos} for:item="palco">                            
+                <lightning-accordion-section key={palco} name={palco} label={palco}>
+                    <template if:true={atracoes}>
+                    <!-- sldsValidatorIgnoreNextLine -->
+                         <lightning-datatable
+                                        key-field={palco}
+                                        data={atracoes}
+                                        columns={columns}
+                                        onrowaction={handleRowAction}
+                                        hide-checkbox-column>
+                        </lightning-datatable>
+                    </template>
+                </lightning-accordion-section>
+
+            </template>
+        </template>
+    </lightning-accordion>
+    
+</template>
