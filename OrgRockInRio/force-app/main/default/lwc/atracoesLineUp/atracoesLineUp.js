@@ -1,7 +1,8 @@
 import { LightningElement, api } from 'lwc';
 
 const actions = [
-    { label: 'Exibir Atração', name: 'show_details'}
+    { label: 'Exibir Atração', name: 'show_details', iconName: 'utility:search'},
+    { label: 'Imprimir Atração', name: 'pdf_atracao', iconName: 'utility:print'}
 ]
 
 const columns = [
@@ -53,6 +54,8 @@ export default class AtracoesLineUp extends LightningElement {
             case 'show_details':
                 window.open('/' + row.idAtracao, '_blank');
                 break;
+            case 'pdf_atracao' :
+                window.open('/apex/AtracaoPDF?id=' + row.idAtracao, '_blank')
             default:
         }
     }
